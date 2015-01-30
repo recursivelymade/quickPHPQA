@@ -4,9 +4,9 @@ Quick PHP QA
 We needed a really quick basic way to QA php applications and spit out a report without having to get something like [Jenkins for PHP](http://jenkins-php.org/) or [Sonar](http://www.sonarqube.org/) up and running. All you need is [Composer](https://getcomposer.org/) installed and command line access.
 
 To run it's simply
-    ./qa.sh /var/directory/your/code /var/directory/your/reports
+    ./qa.sh /var/directory/your/code /var/directory/report/web/data
 
-Have your reports in web/data folder and fire up the index.html file through a web server.
+Have your reports in web/data folder and fire up the index.html file through a web server (this is important as the json/xml won't load into the page from localhost).
 
 ## What's installed by Composer?
  * [PHPLOC](http://github.com/sebastianbergmann/phploc)
