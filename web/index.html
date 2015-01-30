@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Quick PHP QA Report</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Quick PHP QA</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="data/phpmd.html">PHP Mess Detector</a></li>
+          <li><a href="phpcpd.html">PHP Copy/Paste Detector</a></li>
+          <li><a href="phpcs.html">PHP_CodeSniffer</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="starter-template" style="margin-top:65px;">
+      <div class="jumbotron">
+        <h1>Project Overview</h1>
+        <div class="row">
+          <div class="col-md-6">
+            <p class="lead"><strong id="phploc-files">X</strong><br><small>Files</small></p>
+          </div>
+          <div class="col-md-6">
+            <p class="lead"><strong id="phploc-directories">X</strong><br><small>Directories</small></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p class="lead"><strong id="phploc-ccnByLloc">X</strong><br><small><a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity">Cyclomatic Complexity</a> / <abbr title="Logical Lines of Code">LLOC</abbr></small></p>
+
+            <p><strong>Metrics</strong><br><img src="data/pyramid.svg"></p>
+          </div>
+          <div class="col-md-6">
+            <p class="lead"><strong id="phploc-ccnByNom">X</strong><br><small><a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity">Cyclomatic Complexity</a> / Number of Methods</small></p>
+            <p><strong>Metrics</strong><br><img src="data/jdepend.svg"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Size</h2>
+        <dl>
+          <dt>Lines of Code (LOC)</dt>
+          <dd id="phploc-loc">...</dd>
+          <dt>Comment Lines of Code (CLOC)</dt>
+          <dd id="phploc-cloc">...</dd>
+          <dt>Non-Comment Lines of Code (NCLOC)</dt>
+          <dd id="phploc-ncloc">...</dd>
+          <dt>Logical Lines of Code (LLOC)</dt>
+          <dd id="phploc-lloc">...</dd>
+        </dl>
+        <h3>Classes <small id="phploc-llocClasses">...</small></h3>
+        <dl>
+          <dt>Average Class Length</dt>
+          <dd id="phploc-llocByNoc">...</dd>
+          <dt>Average Method Length</dt>
+          <dd id="phploc-llocByNom">...</dd>
+        </dl>
+        <h3>Functions <small id="phploc-functions">...</small></h3>
+        <dl>
+          <dt>Average Function Length</dt>
+          <dd id="phploc-llocByNof">...</dd>
+        </dl>
+        <h3><small class="label label-danger" id="phploc-llocGlobal">...</small> not in classes or functions</h3>
+      </div>
+      <div class="col-md-4">
+        <h2>Structure</h2>
+        <dl>
+          <dt>Namespaces</dt>
+          <dd id="phploc-namespaces">...</dd>
+          <dt>Interfaces</dt>
+          <dd id="phploc-interfaces">...</dd>
+          <dt>Traits</dt>
+          <dd id="phploc-traits">...</dd>
+        </dl>
+        <h3>Classes <small id="phploc-classes">...</small></h3>
+        <dl>
+          <dt>Abstract Classes</dt>
+          <dd id="phploc-abstractClasses">...</dd>
+          <dt>Concrete Classes</dt>
+          <dd id="phploc-concreteClasses">...</dd>
+        </dl>
+        <h3>Methods <small id="phploc-methods"></small></h3>
+        <h4>Scope</h4>
+        <dl>
+          <dt>Non-Static Methods</dt>
+          <dd id="phploc-nonStaticMethods">...</dd>
+          <dt>Static Methods</dt>
+          <dd id="phploc-staticMethods">...</dd>
+        </dl>
+        <h4>Visibility</h4>
+        <dl>
+          <dt>Public Methods</dt>
+          <dd id="phploc-publicMethods">...</dd>
+          <dt>Non-Public Methods</dt>
+          <dd id="phploc-nonPublicMethods">...</dd>
+        </dl>
+        <h3>Functions <small id="phploc-functions">...</small></h3>
+        <dl>
+          <dt>Named Functions</dt>
+          <dd id="phploc-namedFunctions">...</dd>
+          <dt>Anonymous Functions</dt>
+          <dd id="phploc-anonymousFunctions">...</dd>
+        </dl>
+        <h3>Constants <small id="phploc-constants">...</small></h3>
+        <dl>
+          <dt>Global Constants</dt>
+          <dd id="phploc-classConstants">...</dd>
+          <dt>Class Constants</dt>
+          <dd id="phploc-globalConstants">...</dd>
+        </dl>
+      </div>
+      <div class="col-md-4">
+        <h2>Dependencies</h2>
+        <h3>Global Accesses <small id="phploc-globalAccesses">...</small></h3>
+        <dl>
+          <dt>Global Constants</dt>
+          <dd id="phploc-globalConstantAccesses">...</dd>
+          <dt>Global Variables </dt>
+          <dd id="phploc-globalVariableAccesses">...</dd>
+          <dt>Super-Global Variables</dt>
+          <dd id="phploc-superGlobalVariableAccesses">...</dd>
+        </dl>
+        <h3>Attribute Accesses <small id="phploc-attributeAccesses">...</small></h3>
+        <dl>
+          <dt>Non-Static</dt>
+          <dd id="phploc-instanceAttributeAccesses">...</dd>
+          <dt>Static</dt>
+          <dd id="phploc-staticAttributeAccesses">...</dd>
+        </dl>
+        <h3>Method Calls <small id="phploc-methodCalls">...</small></h3>
+        <dl>
+          <dt>Non-Static</dt>
+          <dd id="phploc-instanceMethodCalls">...</dd>
+          <dt>Static</dt>
+          <dd id="phploc-staticMethodCalls">...</dd>
+        </dl>
+      </div>
+    </div>
+
+  </div><!-- /.container -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready( function () {
+      var jqxhr = $.get( "data/phploc.xml", function(xml) {
+        var phploc = $(xml).find("phploc");
+        phploc.children().each(function () {
+          var tag = this.tagName;
+          var val=$(this).text();
+          $("#phploc-"+tag).text(val);
+        });
+
+
+      })
+      .fail(function() {
+        alert( "error - somethings gone wrong" );
+      })
+    });
+  </script>
+</body>
+</html>

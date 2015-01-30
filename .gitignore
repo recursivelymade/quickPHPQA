@@ -1,0 +1,15 @@
+# Managed by Composer
+/vendor/
+
+# Composer PHAR
+/composer.phar
+
+# Where your data lives
+/web/data/
+
+# Annoying OS files
+.DS_Store
+Thumbs.db
+
+# Odd NAAS folder
+*@eaDir*

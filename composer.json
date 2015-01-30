@@ -1,0 +1,9 @@
+{
+    "require-dev": {
+        "sebastian/phpcpd": "*",
+        "pdepend/pdepend" : "2.0.4",
+        "phploc/phploc": "*",
+        "phpmd/phpmd" : "@stable",
+        "squizlabs/php_codesniffer": "2.*"
+    }
+}
